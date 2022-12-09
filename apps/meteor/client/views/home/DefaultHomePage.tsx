@@ -26,36 +26,6 @@ const DefaultHomePage = (): ReactElement => {
 		<Page data-qa='page-home' data-qa-type='default' background='tint'>
 			<HomePageHeader />
 			<PageScrollableContent>
-				<Box is='h1' fontScale='h1' data-qa-id='homepage-welcome-text'>
-					{t('Welcome_to', { Site_Name: workspaceName || 'Rocket.Chat' })}
-				</Box>
-				<Box is='h3' fontScale='h3' mb='x16'>
-					{t('Some_ideas_to_get_you_started')}
-				</Box>
-				<Grid>
-					{canAddUsers && (
-						<HomepageGridItem>
-							<AddUsersCard />
-						</HomepageGridItem>
-					)}
-					{canCreateChannel && (
-						<HomepageGridItem>
-							<CreateChannelsCard />
-						</HomepageGridItem>
-					)}
-					<HomepageGridItem>
-						<JoinRoomsCard />
-					</HomepageGridItem>
-					<HomepageGridItem>
-						<MobileAppsCard />
-					</HomepageGridItem>
-					<HomepageGridItem>
-						<DesktopAppsCard />
-					</HomepageGridItem>
-					<HomepageGridItem>
-						<DocumentationCard />
-					</HomepageGridItem>
-				</Grid>
 				<Box mbs='x16'>
 					<CustomHomePageContent />
 				</Box>
