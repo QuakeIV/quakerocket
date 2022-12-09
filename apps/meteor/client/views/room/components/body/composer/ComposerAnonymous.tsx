@@ -3,12 +3,12 @@ import React, { ReactElement } from 'react';
 
 export const ComposerAnonymous = (): ReactElement => {
 	const isAnonymousWriteEnabled = useSetting('Accounts_AllowAnonymousWrite');
-	// 'click .js-register'(event: JQuery.ClickEvent) {
-	// 	event.stopPropagation();
-	// 	event.preventDefault();
+	//'click .js-register'(event: JQuery.ClickEvent) {
+	//	event.stopPropagation();
+	//	event.preventDefault();
 
-	// 	Session.set('forceLogin', true);
-	// },
+	//	Session.set('forceLogin', true);
+	//},
 	// async 'click .js-register-anonymous'(event: JQuery.ClickEvent) {
 	// 	event.stopPropagation();
 	// 	event.preventDefault();
@@ -20,7 +20,7 @@ export const ComposerAnonymous = (): ReactElement => {
 	const t = useTranslation();
 	return (
 		<div className='rc-button-group'>
-			<button className='rc-button rc-button--primary rc-button--small js-register'>{t('Sign_in_to_start_talking')}</button>
+			<button onClick={() => Session.set('forceLogin', true)} className='rc-button rc-button--primary rc-button--small'>{t('Sign_in_to_start_talking')}</button>
 			{isAnonymousWriteEnabled && <button className='rc-button rc-button--small js-register-anonymous'>{t('Or_talk_as_anonymous')}</button>}
 		</div>
 	);
